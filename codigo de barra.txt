@@ -1,0 +1,148 @@
+index (DENTRO DA PASTA WWW)
+
+<!DOCTYPE HTML >
+< html >
+< cabeça >
+  < meta  charset =" utf-8 " >
+  < meta  name =" viewport " content =" width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover " >
+  < meta  http-equiv =" Content-Security-Policy " content =" default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe -inline' 'unsafe-eval' " >
+  < script  src =" componentes/loader.js " > </ script >
+  < script  src =" componentes/acao.js " > </ script >
+
+  < link  rel =" folha de estilo " href =" componentes/loader.css " >
+< link  href =" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " rel =" folha de estilo " integridade = " sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3 " origem cruzada >
+  < link  rel =" folha de estilo " href =" css/style.css " >
+
+</ cabeça >
+< corpo >
+    < classe div  =" contêiner " >
+      < classe div  =" linha " >
+          < classe div  =" coluna " >
+           < div  class =" form-group " >
+             < div  class =" d-grip gap-2 " >
+           < button  class =" btn btn-primary " id =" scan " >   Ler código </ button >
+            </ div >
+           </ div >
+         </ div >
+       </ div >    
+    </ div >
+
+        < classe div  =" linha " >
+          < classe div  =" coluna " >
+            < div  id =" dados " >
+                < img  src ="" id =" foto " >
+            </ div >
+          </ div >    
+       </ div >
+</ corpo >
+</ html >
+
+
+
+
+
+MANIFEST
+
+{
+  "name" : " Aplicativo PWA " ,
+  "short_name" : " Aplicativo PWA " ,
+  "description" : " Este é um modelo mínimo de PWA " ,
+  "ícones" : [{
+    "src" : " images/icons/icon-48x48.png " ,
+    "tamanhos" : " 48x48 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-72x72.png " ,
+    "tamanhos" : " 72x72 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-96x96.png " ,
+    "tamanhos" : " 96x96 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-128x128.png " ,
+    "tamanhos" : " 128x128 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-144x144.png " ,
+    "tamanhos" : " 144x144 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-152x152.png " ,
+    "tamanhos" : " 152x152 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-168x168.png " ,
+    "tamanhos" : " 168x168 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-192x192.png " ,
+    "tamanhos" : " 192x192 " ,
+    "tipo" : " imagem/png "
+  }, {
+    "src" : " images/icons/icon-256x256.png " ,
+    "tamanhos" : " 256x256 " ,
+    "tipo" : " imagem/png "
+  }],
+  "lang" : " en " ,
+  "dir" : " ltr " ,
+  "escopo" : " ./ " ,
+  "start_url" : " index.html " ,
+  "display" : " autônomo " ,
+  "orientação" : " qualquer " ,
+  "background_color" : " #00629d " ,
+  "theme_color" : " #00629d " ,
+  "prefer_related_applications" : false
+}
+
+
+DENTRO DA PASTA WWW vc cria a pasta componets e coloca 
+
+ACAO
+
+janela . carregar  =  função ( ) {
+      documento . querySelector ( "#scan" ) . addEventListener ( 'click' ,  function ( ) {
+
+        cordova . plug-ins . código de barras Scanner . digitalizar (
+      função  ( resultado )  {
+         if ( resultado . texto  ==  '280720550' ) {
+             documento . querySelector ( '#foto' ) . src  =  "imagem1.jpg" ;
+
+            documento . querySelector ( "#dados" )  . innerHTML  =  "<h1> Nome do produto:</h1><h3>IPad Mini WI-FI 64GB - Cinza Espacial </h3><h2> Valor: R$ 3.499,00<br> Descrição:</h2> Processador A12 Bionic com arquitetura de 64 bits Neural Engine Coprocessador M12 Integrado<br> Sistema operacional IOS<br> Tamanho da tela 7.9<br> Tecnologia WI-FI<br> Resolução da câmera - Câmera traseira: 8MP - Câmera frontal: 7MP <br> > GPS:Sim<br> Grava vídeos:Sim<br> Câmera traseira:Sim<br> Câmera frontal:Sim<br> Memória Flash: 64GB<br> Funciona como celular:Não" ;
+         
+         } else  if  ( resultado . text  ==  '989895555' ) {
+            documento . querySelector ( '#dados' )  . src  =  "imagem2.jpg" ;
+           documento . querySelector ( '#dados' )  . innerHTML  =  "<h1> Nome do produto: </h1><h3> Samsung Galaxy J8 Dual Chip 4g 64GV Tela 6</h3><h2> Valor: R$1.888,00<br> Descrição:</h2>Velocidade do Processador: 1.8GHz<br> Tipo de Processador:Octa Core<br> Tamnho(tela principal): 1480 x 720 (HD+)<br> Câmera Resolução - Câmera Traseira: 16.0 MP + 5.0 MP<br> Memória RAM(GB) : 4 GB<br> Memória Total Interna(GB) - 64GB<br>Memória Disponível(GB) - 50,6 GB" ;
+
+         }  else  if ( resultado . text  ==  '85236987' ) {
+             documento . querySelector ( '#dados' )  . src  =  "imagem3.jpg" ;
+             documento . querySelector ( '#dados' )  . innerHTML  =  "<h1>Nome do produto</h1><h3> Motorola One XT1941 Branco 64GB</h3><h2>Valor: ...<br> Sistema Operacional Android 8.1 Oreo</h2><br>Processador Qualcomm Snapdragon 625 (MSM8953) Octa-Core de 2.0 GHz<br> RAM 4GB<br> Tecnologia G5M, 3g E 4G<br> Memória Interna 64GB Totalmente sendo uma parte usada para o sistema operacional e aplicativos pré-instalados<br>Cor Branco <br>Características Gerais:<br>- Tela Max Vision e design ao máximo<br>-Cãmera dupla e armazenamento ilimitado<br>-Android One: primeiro do Brasil, atualizado e seguro<br>-Carregamento ultrarrápido TurboPower<br>
+
+         }  else  if  ( resultado . text  ==  '85369877444' ) {
+             documento . querySelector ( '#dados' )  . src  =  "imagem4.jpg" ;
+             documento . querySelector ( '#dados' )  . innerHTML  =  "<h1> Produto: Asus Zenfone Max Pro M1</h1><h3> Valor: R$1.199,00</h3><h2>Processador: Qualcomm Snapdragon SDM636 1,8 GHz, 2 Mb Cache<br> Sistema Operacional: Android 8.1 Oreo</h2><br> Memória RAM: 4GB <br> Memória Interna: 64GB<br> Memória Expansiva: 2TB Sd<br> Tela:6,0 Led Baclight Ips panel(1080x2160)<br> Tipo de Chip: Nano - Dual Chip: Sim<br> Conectividade:3G, 4G, WI-FI<br> Câmera Frontal: 8MP<br> Câmera Traseira: 16-5MP " ;
+
+         }  senão  { 
+             documento . querySelector ( '#dados' ) . innerHTML  =  "<h1>Produto não encontrado</h1>"
+      }
+      } ,
+      função  ( erro )  {
+          alert ( "Falha na digitalização:"  +  erro ) ;
+      } ,
+      {
+          preferFrontCamera : true ,  // iOS e Android
+          showFlipCameraButton : true ,  // iOS e Android
+          showTorchButton : true ,  // iOS e Android
+          torchOn : true ,  // Android, inicie com a tocha ligada (se disponível)
+          saveHistory : true ,  // Android, salva histórico de varredura (padrão false)
+          prompt : "Coloque um código de barras dentro da área de digitalização" ,  // Android
+          resultDisplayDuration : 500 ,  // Android, exibe o texto digitalizado por X ms. 0 suprime totalmente, padrão 1500
+          formatos : "CODE_39" ,  // padrão: todos, exceto PDF_417 e RSS_EXPANDED
+          orientação : "paisagem" ,  // somente Android (retrato|paisagem), padrão não definido para que gire com o dispositivo
+          disableAnimations : true ,  // iOS
+          disableSuccessBeep : false  // iOS e Android
+      }
+   ) ;
+  
+      } ) ;
+}
